@@ -1,0 +1,11 @@
+- import quickstart.action._
+
+!!! 5
+html
+  head
+    title =at("title").asInstanceOf[String]
+    link(type="text/css" rel="stylesheet" media="screen" href={publicUrl("stylesheets/main.css")})
+    link(rel="shortcut icon" href={publicUrl("favicon.ico")})
+    script(src={publicUrl("javascripts/hello.js")} type="text/javascript")
+  body
+    != renderedView

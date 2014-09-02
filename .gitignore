@@ -1,0 +1,24 @@
+# Ignore Play! working directory #
+playframework/bin/
+playframework/db
+playframework.eclipse
+playframework/lib/
+playframework/logs/
+playframework/modules
+playframework/project/project
+playframework/project/target
+playframework/target
+playframework/tmp/
+playframework/test-result
+playframework/server.pid
+playframework/*.iml
+playframework/*.eml
+playframework/dist/
+playframework/.cache
+
+xitrum/.*
+xitrum/log
+xitrum/project/project
+xitrum/project/target
+xitrum/target
+xitrum/tmp
