@@ -51,6 +51,7 @@ Application will run at http://localhost:8000
 ### Benchmark
 
 iMac
+
 * 21.5-inch, Late 2012
 * Processor  2.7 GHz Intel Core i5
 * Memory  8 GB 1600 MHz DDR3
@@ -59,50 +60,19 @@ iMac
 * Software  OS X 10.9.4 (13E28)
 
 
-    sw_vers
+    > sw_vers
     ProductName:	Mac OS X
     ProductVersion:	10.9.4
     BuildVersion:	13E28
 
-    httperf --version
+    > httperf --version
     httperf: httperf-0.9.0 compiled Nov 18 2012 without DEBUG without TIME_SYSCALLS.
 
 
 #### PlayFramework
 
 ```
-httperf --client=0/1 --server=localhost --port=8000 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10 --rate 100 --timeout 5
-```
-
-    httperf --timeout=5 --client=0/1 --server=localhost --port=8000 --uri=/ --rate=100 --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10
-    httperf: warning: open file limit > FD_SETSIZE; limiting max. # of open files to FD_SETSIZE
-    Maximum connect burst length: 1
-
-    Total: connections 1000 requests 10000 replies 10000 test-duration 9.993 s
-
-    Connection rate: 100.1 conn/s (10.0 ms/conn, <=1 concurrent connections)
-    Connection time [ms]: min 2.5 avg 2.7 max 5.8 median 2.5 stddev 0.3
-    Connection time [ms]: connect 0.1
-    Connection length [replies/conn]: 10.000
-
-    Request rate: 1000.7 req/s (1.0 ms/req)
-    Request size [B]: 62.0
-
-    Reply rate [replies/s]: min 999.9 avg 999.9 max 999.9 stddev 0.0 (1 samples)
-    Reply time [ms]: response 0.3 transfer 0.0
-    Reply size [B]: header 136.0 content 406.0 footer 0.0 (total 542.0)
-    Reply status: 1xx=0 2xx=10000 3xx=0 4xx=0 5xx=0
-
-    CPU time [s]: user 2.47 system 7.51 (user 24.7% system 75.2% total 99.9%)
-    Net I/O: 590.3 KB/s (4.8*10^6 bps)
-
-    Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
-    Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
-
-#### Xitrum
-
-```
-httperf --client=0/1 --server=localhost --port=8000 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10 --rate 100 --timeout 5
+> httperf --client=0/1 --server=localhost --port=9000 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10 --rate 100 --timeout 5
 ```
 
     httperf --timeout=5 --client=0/1 --server=localhost --port=9000 --uri=/ --rate=100 --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10
@@ -126,6 +96,38 @@ httperf --client=0/1 --server=localhost --port=8000 --uri=/ --send-buffer=4096 -
 
     CPU time [s]: user 2.55 system 7.40 (user 25.5% system 74.0% total 99.5%)
     Net I/O: 532.7 KB/s (4.4*10^6 bps)
+
+    Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
+    Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
+
+
+#### Xitrum
+
+```
+> httperf --client=0/1 --server=localhost --port=8000 --uri=/ --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10 --rate 100 --timeout 5
+```
+
+    httperf --timeout=5 --client=0/1 --server=localhost --port=8000 --uri=/ --rate=100 --send-buffer=4096 --recv-buffer=16384 --num-conns=1000 --num-calls=10
+    httperf: warning: open file limit > FD_SETSIZE; limiting max. # of open files to FD_SETSIZE
+    Maximum connect burst length: 1
+
+    Total: connections 1000 requests 10000 replies 10000 test-duration 9.993 s
+
+    Connection rate: 100.1 conn/s (10.0 ms/conn, <=1 concurrent connections)
+    Connection time [ms]: min 2.5 avg 2.7 max 5.8 median 2.5 stddev 0.3
+    Connection time [ms]: connect 0.1
+    Connection length [replies/conn]: 10.000
+
+    Request rate: 1000.7 req/s (1.0 ms/req)
+    Request size [B]: 62.0
+
+    Reply rate [replies/s]: min 999.9 avg 999.9 max 999.9 stddev 0.0 (1 samples)
+    Reply time [ms]: response 0.3 transfer 0.0
+    Reply size [B]: header 136.0 content 406.0 footer 0.0 (total 542.0)
+    Reply status: 1xx=0 2xx=10000 3xx=0 4xx=0 5xx=0
+
+    CPU time [s]: user 2.47 system 7.51 (user 24.7% system 75.2% total 99.9%)
+    Net I/O: 590.3 KB/s (4.8*10^6 bps)
 
     Errors: total 0 client-timo 0 socket-timo 0 connrefused 0 connreset 0
     Errors: fd-unavail 0 addrunavail 0 ftab-full 0 other 0
